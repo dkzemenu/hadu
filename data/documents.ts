@@ -15,8 +15,38 @@ export const tenderDocuments: TenderDocument[] = [
   {
     title: "Registration & License File",
     type: "PDF",
-    description: "Placeholder for business registration, trade license, VAT/TIN, and relevant certificates.",
+    description: "Combined legal pack extracted from the original company profile, including taxpayer registration, VAT registration, business license, trade name and business competency certificate.",
     href: "/documents/hadu-registration-license.pdf"
+  },
+  {
+    title: "Tax Payer Registration",
+    type: "PDF",
+    description: "Taxpayer registration document extracted from the original HADU company profile.",
+    href: "/documents/hadu-tax-payer-registration.pdf"
+  },
+  {
+    title: "VAT Registration",
+    type: "PDF",
+    description: "VAT registration document extracted from the original HADU company profile.",
+    href: "/documents/hadu-vat-registration.pdf"
+  },
+  {
+    title: "Business License",
+    type: "PDF",
+    description: "Business license document extracted from the original HADU company profile.",
+    href: "/documents/hadu-business-license.pdf"
+  },
+  {
+    title: "Trade Name Certificate",
+    type: "PDF",
+    description: "Trade name certificate extracted from the original HADU company profile.",
+    href: "/documents/hadu-trade-name.pdf"
+  },
+  {
+    title: "Business Competency Certificate",
+    type: "PDF",
+    description: "Business competency certificate extracted from the original HADU company profile.",
+    href: "/documents/hadu-business-competency-certificate.pdf"
   },
   {
     title: "HSE Policy Statement",
