@@ -29,7 +29,7 @@ export default function ContactPage() {
               </div>
               <a
                 href={`https://wa.me/${company.whatsapp}`}
-                className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md bg-teal px-5 py-3 text-sm font-bold text-white hover:bg-[#0f786d]"
+                className="focus-ring mt-7 inline-flex items-center gap-2 rounded-md bg-teal px-5 py-3 text-sm font-bold text-white hover:bg-teal-hover"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp Quick Contact
               </a>

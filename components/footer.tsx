@@ -3,13 +3,17 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { products } from "@/data/products";
 import { services } from "@/data/services";
 import { company } from "@/data/site";
+import { LogoMark } from "@/components/logo-mark";
 
 export function Footer() {
   return (
     <footer className="bg-navy px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <div className="text-2xl font-black">{company.name}</div>
+          <div className="flex items-center gap-3">
+            <LogoMark className="h-12 w-12" variant="inverse" />
+            <div className="text-2xl font-black">{company.name}</div>
+          </div>
           <p className="mt-4 max-w-sm leading-7 text-blue-100">
             Tender-ready electromechanical supply, installation, documentation, and project support for public and private clients.
           </p>

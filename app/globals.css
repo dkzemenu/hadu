@@ -5,6 +5,46 @@
 :root {
   --background: #ffffff;
   --foreground: #172033;
+  --color-background: 255 255 255;
+  --color-navy: 11 37 69;
+  --color-steel: 19 64 116;
+  --color-teal: 18 140 126;
+  --color-teal-hover: 15 120 109;
+  --color-amber: 245 158 11;
+  --color-amber-hover: 250 204 21;
+  --color-cloud: 244 247 250;
+  --color-ink: 23 32 51;
+  --color-hero-overlay: 11 37 69;
+}
+
+html[data-theme="electric"] {
+  --background: #fffafa;
+  --foreground: #251018;
+  --color-background: 255 250 250;
+  --color-navy: 55 8 22;
+  --color-steel: 127 29 29;
+  --color-teal: 220 38 38;
+  --color-teal-hover: 185 28 28;
+  --color-amber: 250 204 21;
+  --color-amber-hover: 253 224 71;
+  --color-cloud: 255 241 242;
+  --color-ink: 37 16 24;
+  --color-hero-overlay: 55 8 22;
+}
+
+html[data-theme="brown"] {
+  --background: #fffdf9;
+  --foreground: #231a14;
+  --color-background: 255 253 249;
+  --color-navy: 59 36 22;
+  --color-steel: 111 78 55;
+  --color-teal: 154 91 34;
+  --color-teal-hover: 124 72 27;
+  --color-amber: 217 119 6;
+  --color-amber-hover: 245 158 11;
+  --color-cloud: 247 240 232;
+  --color-ink: 35 26 20;
+  --color-hero-overlay: 59 36 22;
 }
 
 * {
@@ -28,7 +68,7 @@ a {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(11, 37, 69, 0.78), rgba(11, 37, 69, 0.58)),
+    linear-gradient(rgb(var(--color-hero-overlay) / 0.78), rgb(var(--color-hero-overlay) / 0.58)),
     url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1800&q=80");
   background-position: center;
   background-size: cover;
@@ -36,7 +76,7 @@ a {
 
 .contact-grid {
   background-image:
-    linear-gradient(rgba(11, 37, 69, 0.9), rgba(11, 37, 69, 0.82)),
+    linear-gradient(rgb(var(--color-hero-overlay) / 0.9), rgb(var(--color-hero-overlay) / 0.82)),
     url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=80");
   background-position: center;
   background-size: cover;

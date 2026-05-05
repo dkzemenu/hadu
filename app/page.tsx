@@ -146,7 +146,7 @@ export default function Home() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-amber">Ready for quotation</p>
             <h2 className="mt-3 max-w-3xl text-3xl font-black md:text-4xl">Share your project scope, BOQ, or tender requirement with Hadu Engineering.</h2>
           </div>
-          <Link href="/contact" className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-amber px-6 py-3 font-bold text-navy hover:bg-yellow-400">
+          <Link href="/contact" className="focus-ring inline-flex items-center justify-center gap-2 rounded-md bg-amber px-6 py-3 font-bold text-navy hover:bg-amber-hover">
             Contact Us <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

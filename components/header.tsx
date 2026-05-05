@@ -6,6 +6,8 @@ import { useState } from "react";
 import { products } from "@/data/products";
 import { services } from "@/data/services";
 import { company } from "@/data/site";
+import { themes, useTheme } from "@/components/theme-provider";
+import { LogoMark } from "@/components/logo-mark";
 
 const navItems = [
   { label: "About", href: "/about" },
@@ -40,7 +42,7 @@ export function Header() {
       </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="focus-ring flex items-center gap-3 rounded-md">
-          <span className="grid h-11 w-11 place-items-center rounded-md bg-navy text-lg font-black text-white">HE</span>
+          <LogoMark />
           <span>
             <span className="block text-lg font-black text-navy">{company.name}</span>
             <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Engineering & Supply</span>
@@ -75,14 +77,17 @@ export function Header() {
           ))}
         </div>
 
-        <button
-          type="button"
-          className="focus-ring rounded-md border border-slate-300 p-2 text-navy lg:hidden"
-          onClick={() => setOpen((value) => !value)}
-          aria-label="Toggle navigation"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-3">
+          <ThemeSwitcher />
+          <button
+            type="button"
+            className="focus-ring rounded-md border border-slate-300 p-2 text-navy lg:hidden"
+            onClick={() => setOpen((value) => !value)}
+            aria-label="Toggle navigation"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {open ? (
@@ -97,6 +102,30 @@ export function Header() {
         </div>
       ) : null}
     </header>
+  );
+}
+
+function ThemeSwitcher() {
+  const { theme: activeTheme, setTheme } = useTheme();
+
+  return (
+    <div className="flex items-center gap-1 rounded-md border border-slate-200 bg-white p-1 shadow-sm" aria-label="Theme selector">
+      {themes.map((theme) => (
+        <button
+          key={theme.id}
+          type="button"
+          onClick={() => setTheme(theme.id)}
+          className={`focus-ring grid h-8 w-8 place-items-center rounded-md transition ${
+            activeTheme === theme.id ? "bg-cloud ring-2 ring-teal ring-offset-1" : "hover:bg-cloud"
+          }`}
+          aria-label={`Use ${theme.label} theme`}
+          aria-pressed={activeTheme === theme.id}
+          title={theme.label}
+        >
+          <span className={`h-4 w-4 rounded-full ${theme.swatch}`} aria-hidden="true" />
+        </button>
+      ))}
+    </div>
   );
 }
 
