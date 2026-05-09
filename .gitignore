@@ -5,6 +5,9 @@ dist
 .env
 .env.local
 .env.*.local
+payload.db
+payload.db-*
+public/media
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

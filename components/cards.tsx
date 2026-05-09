@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
-import type { Product } from "@/data/products";
-import type { Project } from "@/data/projects";
-import type { Service } from "@/data/services";
-import type { TenderDocument } from "@/data/documents";
+import type { Product, Project, Service, TenderDocument } from "@/lib/content-types";
 
 export function ServiceCard({ service }: { service: Service }) {
   return (

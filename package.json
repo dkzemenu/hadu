@@ -2,13 +2,20 @@
   "name": "hadu-engineering",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
+    "cms:generate:importmap": "payload generate:importmap",
+    "cms:generate:types": "payload generate:types",
+    "cms:seed": "payload run scripts/seed-payload.ts",
     "start": "next start",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.84.1",
+    "@payloadcms/next": "^3.84.1",
+    "@payloadcms/richtext-lexical": "^3.84.1",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -17,11 +24,13 @@
     "eslint-config-next": "latest",
     "lucide-react": "latest",
     "next": "latest",
+    "payload": "^3.84.1",
     "postcss": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "latest"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "npm@10.9.2"
 }

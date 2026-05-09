@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { products } from "@/data/products";
-import { services } from "@/data/services";
-import { company } from "@/data/site";
 import { LogoMark } from "@/components/logo-mark";
+import { getProducts, getServices, getSiteSettings } from "@/lib/cms";
 
-export function Footer() {
+export async function Footer() {
+  const [{ company }, products, services] = await Promise.all([getSiteSettings(), getProducts(), getServices()]);
+
   return (
     <footer className="bg-navy px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">

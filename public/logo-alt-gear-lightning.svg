@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title desc">
+  <title id="title">HADU mechanical gear and lightning logo alternative</title>
+  <desc id="desc">A brown HADU logo alternative with a mechanical gear, H monogram, and amber lightning bolt.</desc>
+  <rect width="320" height="96" rx="16" fill="#FFFDF9"/>
+  <rect x="1.5" y="1.5" width="317" height="93" rx="14.5" fill="none" stroke="#E8D9C9" stroke-width="3"/>
+  <g transform="translate(17 12)">
+    <circle cx="36" cy="36" r="34" fill="#3B2416"/>
+    <path
+      d="M36 4 41 11 50 8 52 17 61 20 57 29 65 36 57 43 61 52 52 55 50 64 41 61 36 68 31 61 22 64 20 55 11 52 15 43 7 36 15 29 11 20 20 17 22 8 31 11 36 4Z"
+      fill="#9A5B22"
+    />
+    <circle cx="36" cy="36" r="22" fill="#FFFDF9"/>
+    <circle cx="36" cy="36" r="16" fill="#3B2416"/>
+    <path d="M23 48V24h7v9h12v-9h7v24h-7v-9H30v9h-7Z" fill="#FFFFFF"/>
+    <path d="M48 16 35 38h10l-7 19 17-27h-9l2-14Z" fill="#D97706"/>
+  </g>
+  <g transform="translate(106 24)">
+    <text x="0" y="32" fill="#3B2416" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="900" letter-spacing="2.5">HADU</text>
+    <text x="2" y="55" fill="#6F4E37" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="1.6">M &amp; E ENGINEERING</text>
+    <path d="M2 66h92" stroke="#9A5B22" stroke-width="5" stroke-linecap="round"/>
+    <path d="M105 66h38" stroke="#D97706" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <path d="M281 20h19M281 76h19M300 20v56" fill="none" stroke="#9A5B22" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+</svg>
