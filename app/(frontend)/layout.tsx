@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -17,19 +16,19 @@ export const metadata: Metadata = {
     "Hadu Engineering provides electromechanical supply, installation, project delivery, tender support, and technical products in Ethiopia."
 };
 
+export const dynamic = "force-dynamic";
+
 export default function FrontendLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="brown">
       <body className="min-h-screen bg-background font-sans text-ink antialiased">
-        <ThemeProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

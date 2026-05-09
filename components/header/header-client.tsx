@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
-import { themes, useTheme } from "@/components/theme-provider";
 import { LogoMark } from "@/components/logo-mark";
 import type { Company, Product, Service } from "@/lib/content-types";
 
@@ -76,7 +75,6 @@ export function HeaderClient({ company, products, services }: { company: Company
         </div>
 
         <div className="flex items-center gap-3">
-          <ThemeSwitcher />
           <button
             type="button"
             className="focus-ring rounded-md border border-slate-300 p-2 text-navy lg:hidden"
@@ -100,30 +98,6 @@ export function HeaderClient({ company, products, services }: { company: Company
         </div>
       ) : null}
     </header>
-  );
-}
-
-function ThemeSwitcher() {
-  const { theme: activeTheme, setTheme } = useTheme();
-
-  return (
-    <div className="flex items-center gap-1 rounded-md border border-slate-200 bg-white p-1 shadow-sm" aria-label="Theme selector">
-      {themes.map((theme) => (
-        <button
-          key={theme.id}
-          type="button"
-          onClick={() => setTheme(theme.id)}
-          className={`focus-ring grid h-8 w-8 place-items-center rounded-md transition ${
-            activeTheme === theme.id ? "bg-cloud ring-2 ring-teal ring-offset-1" : "hover:bg-cloud"
-          }`}
-          aria-label={`Use ${theme.label} theme`}
-          aria-pressed={activeTheme === theme.id}
-          title={theme.label}
-        >
-          <span className={`h-4 w-4 rounded-full ${theme.swatch}`} aria-hidden="true" />
-        </button>
-      ))}
-    </div>
   );
 }
 
