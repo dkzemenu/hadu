@@ -24,7 +24,7 @@ export default function FrontendLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="brown">
+    <html lang="en" data-theme="brown" suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans text-ink antialiased">
         <Header />
         <main>{children}</main>

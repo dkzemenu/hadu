@@ -11,6 +11,7 @@ import { getPayload, type Payload } from "payload";
 type Collection = "documents" | "news" | "partners" | "products" | "projects" | "services";
 type PayloadWithLooseData = Payload & {
   create: (args: { collection: Collection; data: Record<string, unknown> }) => Promise<unknown>;
+  delete: (args: { collection: Collection; id: number | string }) => Promise<unknown>;
   update: (args: { collection: Collection; data: Record<string, unknown>; id: number | string }) => Promise<unknown>;
 };
 
@@ -44,6 +45,25 @@ async function upsertByField(payload: Payload, collection: Collection, field: st
     collection,
     data
   });
+}
+
+async function pruneByField(payload: Payload, collection: Collection, field: string, allowedValues: string[]) {
+  const cms = payload as PayloadWithLooseData;
+  const allowed = new Set(allowedValues);
+  const existing = await payload.find({
+    collection,
+    limit: 1000
+  });
+
+  for (const doc of existing.docs) {
+    const value = (doc as unknown as Record<string, unknown>)[field];
+    if (typeof value === "string" && !allowed.has(value)) {
+      await cms.delete({
+        collection,
+        id: doc.id
+      });
+    }
+  }
 }
 
 async function seed() {
@@ -111,6 +131,19 @@ async function seed() {
   for (const document of tenderDocuments) {
     await upsertByField(payload, "documents", "title", document.title, document);
   }
+
+  await pruneByField(
+    payload,
+    "products",
+    "slug",
+    products.map((product) => product.slug)
+  );
+  await pruneByField(
+    payload,
+    "services",
+    "slug",
+    services.map((service) => service.slug)
+  );
 
   await payload.destroy();
 }

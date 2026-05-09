@@ -1,6 +1,8 @@
 import "server-only";
 
 import config from "@payload-config";
+import { products as productSeedOrder } from "@/data/products";
+import { services as serviceSeedOrder } from "@/data/services";
 import { getPayload } from "payload";
 import type { Company, CompanyProfile, NewsItem, Partner, Product, Project, Service, SiteSettings, Stat, TenderDocument } from "@/lib/content-types";
 
@@ -99,6 +101,11 @@ function mediaUrl(media: PayloadMedia | number | string | null | undefined, fall
   return fallback;
 }
 
+function sortBySlugOrder<T extends { slug: string }>(items: T[], order: string[]) {
+  const index = new Map(order.map((slug, position) => [slug, position]));
+  return [...items].sort((first, second) => (index.get(first.slug) ?? Number.MAX_SAFE_INTEGER) - (index.get(second.slug) ?? Number.MAX_SAFE_INTEGER));
+}
+
 function mapProduct(doc: ProductDoc): Product {
   return {
     slug: doc.slug ?? "",
@@ -165,7 +172,10 @@ function mapDocument(doc: DocumentDoc): TenderDocument {
 export async function getProducts(): Promise<Product[]> {
   const payload = await getCMS();
   const result = await payload.find({ collection: "products", limit: 100, sort: "createdAt" });
-  return result.docs.map((doc) => mapProduct(doc as ProductDoc));
+  return sortBySlugOrder(
+    result.docs.map((doc) => mapProduct(doc as ProductDoc)),
+    productSeedOrder.map((product) => product.slug)
+  );
 }
 
 export async function getProductBySlug(slug: string): Promise<Product | null> {
@@ -186,7 +196,10 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
 export async function getServices(): Promise<Service[]> {
   const payload = await getCMS();
   const result = await payload.find({ collection: "services", limit: 100, sort: "createdAt" });
-  return result.docs.map((doc) => mapService(doc as ServiceDoc));
+  return sortBySlugOrder(
+    result.docs.map((doc) => mapService(doc as ServiceDoc)),
+    serviceSeedOrder.map((service) => service.slug)
+  );
 }
 
 export async function getServiceBySlug(slug: string): Promise<Service | null> {

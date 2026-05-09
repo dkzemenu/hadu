@@ -16,7 +16,7 @@ export const products: Product[] = [
     title: "Electric Cables",
     summary: "Low-voltage and project-specified power cables for buildings, industrial sites, and infrastructure works.",
     specs: {
-      Voltage: "Project-specified LV ranges",
+      Range: "Power, control and installation cable options",
       Conductors: "Copper or aluminum options",
       Documentation: "Datasheet, compliance certificate, delivery note"
     },
@@ -25,73 +25,87 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    slug: "generators",
-    category: "Power Systems",
-    title: "Generators",
-    summary: "Standby and prime power generator sets for facilities, project sites, institutions, and commercial users.",
+    slug: "generators-and-pumps",
+    category: "Power & Pumping Systems",
+    title: "Generators and Pumps",
+    summary: "Generator sets, water pumps, and related accessories for facilities, project sites, institutions, and commercial users.",
     specs: {
-      Rating: "Sized by project load requirement",
-      Fuel: "Diesel options",
-      Scope: "Supply, installation support, commissioning"
+      Generator: "Standby and prime power options sized by load requirement",
+      Pump: "Water transfer, booster and project-specific pump options",
+      Scope: "Supply, installation support, commissioning and maintenance guidance"
     },
-    applications: ["Backup power", "Remote site power", "Institutional facilities"],
+    applications: ["Backup power", "Water supply and transfer", "Remote site operations"],
     datasheet: "/documents/datasheet-generators.pdf",
     image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    slug: "solar-systems",
+    slug: "solar-system-equipment-accessories",
     category: "Renewable Energy",
-    title: "Solar Systems",
-    summary: "PV panels, inverters, batteries, mounting structures, and protection devices for complete solar systems.",
+    title: "Solar System Equipment and Accessories",
+    summary: "PV panels, inverters, batteries, mounting structures, protection devices, and accessories for complete solar systems.",
     specs: {
       Configuration: "Grid-tied, off-grid, or hybrid",
-      Components: "Panels, inverter, batteries, DC/AC protection",
-      Services: "Sizing, supply, installation, commissioning"
+      Components: "Panels, inverter, batteries, DC/AC protection and mounting accessories",
+      Support: "Sizing, supply, installation and commissioning"
     },
     applications: ["Commercial power", "Institutional facilities", "Remote operations"],
     datasheet: "/documents/datasheet-solar-systems.pdf",
     image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80"
   },
   {
-    slug: "electrical-panels",
-    category: "Electrical Supply",
-    title: "Electrical Panels",
-    summary: "Distribution panels, control panels, and protection boards built around project specifications.",
+    slug: "research-laboratory-equipment",
+    category: "Research & Laboratory",
+    title: "Research and Laboratory Equipment",
+    summary: "Research instruments, laboratory equipment, and accessories for education, testing, quality control, and laboratory operations.",
     specs: {
-      Type: "Distribution and control panels",
-      Protection: "Breakers, metering, surge protection options",
-      Documentation: "Panel schedule, test sheet, handover file"
-    },
-    applications: ["Commercial buildings", "Industrial facilities", "Utility rooms"],
-    datasheet: "/documents/datasheet-electrical-panels.pdf",
-    image: "https://images.unsplash.com/photo-1605289982774-9a6fef564df8?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    slug: "street-lighting",
-    category: "Infrastructure",
-    title: "Street Lighting Systems",
-    summary: "Street lighting poles, luminaires, solar lighting options, cabling, and accessories for public and private sites.",
-    specs: {
-      Lighting: "LED and solar street lighting options",
-      Accessories: "Poles, brackets, cables, protection devices",
-      Support: "Supply, installation, and maintenance planning"
-    },
-    applications: ["Roads", "Compounds", "Public facilities"],
-    datasheet: "/documents/datasheet-street-lighting.pdf",
-    image: "https://images.unsplash.com/photo-1542776600-e921421a1ffb?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    slug: "laboratory-equipment",
-    category: "Laboratory",
-    title: "Laboratory Equipment",
-    summary: "Laboratory instruments and accessories for education, research, testing, and quality control environments.",
-    specs: {
-      Categories: "Analytical, water testing, balances, general lab",
-      Support: "Bid specs, datasheets, installation coordination",
+      Categories: "Analytical, water testing, balances, general lab and research equipment",
+      Support: "Bid specs, datasheets, installation coordination and training support",
       Documentation: "Manufacturer datasheets and compliance files"
     },
     applications: ["Universities", "Research centers", "Quality control labs"],
     datasheet: "/documents/datasheet-laboratory-equipment.pdf",
     image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    slug: "lightings-fixtures",
+    category: "Lighting",
+    title: "Lightings and Fixtures",
+    summary: "Indoor, outdoor, street, compound and project lighting fixtures with accessories for public and private facilities.",
+    specs: {
+      Lighting: "LED, solar, street, compound and building lighting options",
+      Accessories: "Poles, brackets, fixtures, cables and protection devices",
+      Support: "Supply, installation planning and maintenance support"
+    },
+    applications: ["Roads", "Commercial buildings", "Compounds and public facilities"],
+    datasheet: "/documents/datasheet-street-lighting.pdf",
+    image: "https://images.unsplash.com/photo-1542776600-e921421a1ffb?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    slug: "chemicals",
+    category: "Chemicals",
+    title: "Chemicals",
+    summary: "Project, industrial, water treatment, laboratory, and maintenance chemicals supplied according to client specifications.",
+    specs: {
+      Categories: "Industrial, laboratory, cleaning, treatment and maintenance chemicals",
+      Packaging: "Supplier and project specification dependent",
+      Documentation: "Safety data sheets, technical datasheets and delivery documents"
+    },
+    applications: ["Laboratories", "Industrial facilities", "Water treatment and maintenance works"],
+    datasheet: "",
+    image: "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    slug: "electronic-equipments",
+    category: "Electronics",
+    title: "Electronic Equipments",
+    summary: "Electronic equipment, accessories, controls, and technical devices for institutional, commercial, and project requirements.",
+    specs: {
+      Categories: "Electronic devices, control accessories and project-specific equipment",
+      Support: "Specification matching, sourcing and technical documentation",
+      Documentation: "Datasheets, warranty documents and compliance files"
+    },
+    applications: ["Institutions", "Commercial facilities", "Industrial and technical projects"],
+    datasheet: "",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
   }
 ];
